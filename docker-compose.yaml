@@ -12,6 +12,9 @@ services:
       - "8126:8126"
     networks:
       - internal
+    volumes:
+      - ./graphite-conf:/opt/graphite/conf
+      - graphite-storage:/opt/graphite/storage
 
   grafana:
     image: grafana/grafana
@@ -19,6 +22,12 @@ services:
       - "3000:3000"
     networks:
       - internal
+    volumes:
+      - grafana-storage:/var/lib/grafana
 
 networks:
   internal:
+
+volumes:
+  graphite-storage:
+  grafana-storage:
