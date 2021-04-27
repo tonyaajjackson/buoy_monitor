@@ -1,11 +1,24 @@
 version: "3.9"
 services:
   graphite:
+    container_name: graphite
     image: graphiteapp/graphite-statsd
     restart: "always"
     ports:
-      - "80:80"
+      - "8080:8080"
       - "2003-2004:2003-2004"
       - "2023-2024:2023-2024"
       - "8125:8125/udp"
       - "8126:8126"
+    networks:
+      - internal
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - internal
+
+networks:
+  internal:
