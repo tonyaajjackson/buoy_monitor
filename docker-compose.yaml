@@ -24,6 +24,8 @@ services:
       - internal
     volumes:
       - grafana-storage:/var/lib/grafana
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-worldmap-panel
 
 networks:
   internal:

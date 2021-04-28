@@ -28,6 +28,18 @@ parser.add_argument(
     action='store',
     required=True
 )
+parser.add_argument(
+    '--lat',
+    help='',
+    action='store',
+    required=True
+)
+parser.add_argument(
+    '--lon',
+    help='',
+    action='store',
+    required=True
+)
 
 args = parser.parse_args()
 
@@ -36,7 +48,9 @@ timestamp = datetime.now().timestamp()
 station_keeping = {
     'cpu': random.randrange(100 + 1),
     'moisture': random.randrange(10),
-    'battery': 60
+    'battery': 60,
+    'lat': args.lat,
+    'lon': args.lon
 }
 
 fluor_data = {"sensor_" + str(id): random.randrange(512, 768) for id in range(6)}
