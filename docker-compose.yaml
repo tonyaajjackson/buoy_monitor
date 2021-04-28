@@ -6,6 +6,7 @@ services:
     restart: "always"
     ports:
       - "2004:2004"
+      - "8080:8080"
     networks:
       - internal
     volumes:
