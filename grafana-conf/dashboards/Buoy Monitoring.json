@@ -16,189 +16,65 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1619582605836,
+  "iteration": 1619630161471,
   "links": [],
   "panels": [
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
+      "circleMaxSize": 30,
+      "circleMinSize": 2,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
       "datasource": null,
+      "decimals": 0,
+      "description": "",
+      "esMetric": "Count",
       "fieldConfig": {
         "defaults": {},
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 11,
+        "w": 11,
         "x": 0,
         "y": 0
       },
-      "hiddenSeries": false,
+      "hideEmpty": false,
+      "hideZero": false,
       "id": 8,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.4",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "lat",
-          "target": "buoy_monitor.$Buoys.station_keeping.lat"
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "lon",
-          "target": "buoy_monitor.$Buoys.station_keeping.lon"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Debug",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "datasource": null,
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": null,
-            "filterable": false
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 8
-      },
-      "id": 6,
+      "initialZoom": "5",
+      "locationData": "countries",
+      "mapCenter": "custom",
+      "mapCenterLatitude": "58",
+      "mapCenterLongitude": "-142",
       "maxDataPoints": 1,
-      "options": {
-        "frameIndex": 1,
-        "showHeader": true,
-        "sortBy": [
-          {
-            "desc": false,
-            "displayName": "buoy_monitor.buoy_0.station_keeping.lat"
-          }
-        ]
-      },
+      "mouseWheelZoom": false,
       "pluginVersion": "7.5.4",
+      "showLegend": true,
+      "stickyLabels": false,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "metricField": "metric",
+        "queryType": "geohash"
+      },
       "targets": [
         {
-          "hide": false,
-          "refCount": 0,
-          "refId": "latitude",
-          "target": "alias(buoy_monitor.*.station_keeping.lat, 'lat')"
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "longitude",
-          "target": "alias(buoy_monitor.*.station_keeping.lon, 'lon')"
-        },
-        {
-          "hide": false,
-          "refCount": 0,
-          "refId": "fluorescence",
-          "target": "alias(buoy_monitor.*.fluorescence.sensor_0, 'metric')"
+          "refId": "A",
+          "target": ""
         }
       ],
+      "thresholds": "0,10",
+      "timeFrom": null,
+      "timeShift": null,
       "title": "Map",
-      "transformations": [
-        {
-          "id": "seriesToColumns",
-          "options": {
-            "byField": "Time"
-          }
-        },
-        {
-          "id": "labelsToFields",
-          "options": {
-            "valueLabel": "name"
-          }
-        }
-      ],
-      "type": "table"
+      "type": "grafana-worldmap-panel",
+      "unitPlural": "",
+      "unitSingle": "",
+      "valueName": "total"
     },
     {
       "aliasColors": {},
@@ -214,9 +90,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 14,
-        "w": 20,
-        "x": 0,
-        "y": 16
+        "w": 11,
+        "x": 11,
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 2,
@@ -272,14 +148,17 @@
       },
       "yaxes": [
         {
-          "format": "short",
-          "label": null,
+          "$$hashKey": "object:50",
+          "decimals": null,
+          "format": "ppm",
+          "label": "Concentration",
           "logBase": 1,
-          "max": null,
-          "min": null,
+          "max": "1024",
+          "min": "0",
           "show": true
         },
         {
+          "$$hashKey": "object:51",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -303,13 +182,13 @@
         "defaults": {},
         "overrides": []
       },
-      "fill": 1,
+      "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 14,
-        "w": 20,
+        "h": 12,
+        "w": 11,
         "x": 0,
-        "y": 30
+        "y": 11
       },
       "hiddenSeries": false,
       "id": 4,
@@ -363,6 +242,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:100",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -371,6 +251,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:101",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -383,6 +264,89 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "circleMaxSize": 30,
+      "circleMinSize": 2,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
+      ],
+      "datasource": null,
+      "decimals": 0,
+      "description": "",
+      "esMetric": "Count",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 0,
+        "y": 23
+      },
+      "hideEmpty": false,
+      "hideZero": false,
+      "id": 6,
+      "initialZoom": 1,
+      "locationData": "countries",
+      "mapCenter": "(0°, 0°)",
+      "mapCenterLatitude": 0,
+      "mapCenterLongitude": 0,
+      "maxDataPoints": 1,
+      "mouseWheelZoom": false,
+      "pluginVersion": "7.5.4",
+      "showLegend": true,
+      "stickyLabels": false,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "metricField": "metric",
+        "queryType": "geohash"
+      },
+      "targets": [
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "latitude",
+          "target": "alias(buoy_monitor.*.station_keeping.lat, 'lat')"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "longitude",
+          "target": "alias(buoy_monitor.*.station_keeping.lon, 'lon')"
+        },
+        {
+          "hide": false,
+          "refCount": 0,
+          "refId": "fluorescence",
+          "target": "alias(buoy_monitor.*.fluorescence.sensor_0, 'metric')"
+        }
+      ],
+      "thresholds": "0,10",
+      "title": "(debug)",
+      "transformations": [
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "Time"
+          }
+        },
+        {
+          "id": "labelsToFields",
+          "options": {
+            "valueLabel": "name"
+          }
+        }
+      ],
+      "type": "grafana-worldmap-panel",
+      "unitPlural": "",
+      "unitSingle": "",
+      "valueName": "total"
     }
   ],
   "schemaVersion": 27,
@@ -476,12 +440,12 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Buoy Monitoring",
   "uid": "gY9Dat9Mk",
-  "version": 6
+  "version": 5
 }
