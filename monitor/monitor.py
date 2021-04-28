@@ -48,7 +48,7 @@ message_buffer = []
 for (key, val) in station_keeping.items():
     message_buffer.append(
         (
-            'station_keeping.' + args.buoy_id + '.' + key,
+            'buoy_monitor.' + args.buoy_id + '.station_keeping.' + key,
             (timestamp, val)
         )
     )
@@ -56,7 +56,7 @@ for (key, val) in station_keeping.items():
 for (key, val) in fluor_data.items():
     message_buffer.append(
         (
-            'fluorescence.' + args.buoy_id + '.' + key,
+            'buoy_monitor.' + args.buoy_id + '.fluorescence.' + key,
             (timestamp, val)
         )
     )
