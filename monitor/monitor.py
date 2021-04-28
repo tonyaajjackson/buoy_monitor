@@ -22,22 +22,44 @@ parser.add_argument(
     type=int,
     required=True
 )
+parser.add_argument(
+    '--buoy-id',
+    help='',
+    action='store',
+    required=True
+)
 
 args = parser.parse_args()
 
-message_buffer = []
 timestamp = datetime.now().timestamp()
 
-# Shape data into expected tuple shape for sending to Graphite
-message_buffer = message_buffer + \
-    [
-        ('station_keeping.cpu', (timestamp, random.randrange(100 + 1))),
-        ('station_keeping.moisture', (timestamp, random.randrange(10))),
-        ('station_keeping.battery', (timestamp, 60))
-    ]
+station_keeping = {
+    'cpu': random.randrange(100 + 1),
+    'moisture': random.randrange(10),
+    'battery': 60
+}
 
-message_buffer = message_buffer + \
-    [("fluorescence.sensor_" + str(id), (timestamp, random.randrange(512, 768))) for id in range(6)]
+fluor_data = {"sensor_" + str(id): random.randrange(512, 768) for id in range(6)}
+
+
+# Shape data into expected tuple shape for sending to Graphite
+message_buffer = []
+
+for (key, val) in station_keeping.items():
+    message_buffer.append(
+        (
+            'station_keeping.' + args.buoy_id + '.' + key,
+            (timestamp, val)
+        )
+    )
+
+for (key, val) in fluor_data.items():
+    message_buffer.append(
+        (
+            'fluorescence.' + args.buoy_id + '.' + key,
+            (timestamp, val)
+        )
+    )
 
 # Send data to Graphite
 payload = pickle.dumps(message_buffer, protocol=2)
